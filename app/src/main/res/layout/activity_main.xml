@@ -25,6 +25,12 @@
             android:layout_height="wrap_content"
             android:text="@string/stringValue2" />
 
+        <Button
+            android:id="@+id/button_tcp_sendPC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送端PC" />
+
         <EditText
             android:id="@+id/edittext_tcp_send_ip"
             android:layout_width="match_parent"

@@ -62,11 +62,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private void initView() {
         Button buttonTcpPreview = findViewById(R.id.button_tcp_preview);
         Button buttonTcpSend = findViewById(R.id.button_tcp_send);
+        Button buttonTcpSendPC = findViewById(R.id.button_tcp_sendPC);
         edittextTcpSendIp = findViewById(R.id.edittext_tcp_send_ip);
         //从 SharedPreferences 中读取最近的 IP 并填入 edittextTcpSendIp
         edittextTcpSendIp.setText(SpUtil.init(this).getip());
         buttonTcpPreview.setOnClickListener(this);
         buttonTcpSend.setOnClickListener(this);
+        buttonTcpSendPC.setOnClickListener(this);
     }
 
     @Override
@@ -90,6 +92,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
             Intent intent = new Intent(this, TcpSendActivity.class);
             intent.putExtra("ip", ip);
+            startActivity(intent);
+        } else if (id == R.id.button_tcp_sendPC) {
+            LogUtil.d("发送端Pc程序启动");
+            LogUtil.d("发送程序启动");
+            Intent intent = new Intent(this, TcpSendPCActivity.class);
             startActivity(intent);
         }
     }
